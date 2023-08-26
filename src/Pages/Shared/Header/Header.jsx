@@ -3,7 +3,7 @@ import { FaLocationArrow, FaPhone } from 'react-icons/fa';
 
 const Header = () => {
     return (
-    <div className=' bg-[#13A2B7] text-white  py-2'> 
+    <div className=' bg-[#13A2B7] text-white  py-2 mb-3'> 
     {/* #2B3440 */}
             <div className='max-w-screen-lg lg:mx-auto ml-10 md:flex gap-8 lg:justify-between md:justify-between justify-center mt-2'>
             <div className='my-auto'>
