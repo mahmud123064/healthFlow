@@ -15,9 +15,9 @@ const Footer = () => {
             </div>
             <div>
                 <Link to= '/' className="link link-hover">Home</Link>
-                <Link to= '/collegeinfo' className="link link-hover">Colleges</Link>
-                <Link to= '/admission' className="link link-hover">Admission</Link>
-                <Link to= '/mycollege' className="link link-hover">My College</Link>
+                <Link to= '/collegeinfo' className="link link-hover">Dashboard</Link>
+                <Link to= '/admission' className="link link-hover">Health Update</Link>
+                {/* <Link to= '/mycollege' className="link link-hover">My College</Link> */}
             </div>
             <div>
                 <span className="footer-title">Information</span>

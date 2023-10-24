@@ -10,7 +10,7 @@ import { router } from './Routes/Routes.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="bg-[#10141F]">
+    <div className="bg-[#233D64]">
       <RouterProvider router={router} />
     </div>
 
