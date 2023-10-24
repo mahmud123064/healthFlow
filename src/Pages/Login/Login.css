@@ -1,0 +1,6 @@
+.banner{
+    background: linear-gradient(#09041430, #0000005a),
+        url('https://i.ibb.co/VqxsKXY/Heart-Image-1024x606.jpg');
+    background-size: cover;
+    height: 700px;
+}
