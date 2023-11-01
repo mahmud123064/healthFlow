@@ -43,7 +43,7 @@ const ContactUs = () => {
                         </div>
                     </div>
 
-                    <div className="w-full md:w1/2 lg:1/2">
+                    <div className="w-full md:w1/2 lg:1/2 bg-black rounded-xl m-2 mx-2 opacity-60">
                         {/* ref={form} onSubmit={sendEmail} */}
                         {/* shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] */}
                         <form className='card-body rounded-xl  '>
@@ -73,7 +73,7 @@ const ContactUs = () => {
                                 <textarea className="input textarea-bordered h-36 bg-gray-700" name='message' placeholder="Write Your Message"></textarea>
                             </div>
 
-                            <input type="submit" value="Send" className='btn bg-sky-500 border-none text-white w-full' />
+                            <input type="submit" value="Send" className='btn bg-sky-500 border-none text-white w-full hover:bg-[#1E3A8A]' />
 
                         </form>
                     </div>
