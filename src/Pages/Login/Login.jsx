@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Login.css"
-import { FcGoogle } from 'react-icons/fc';
+// import { FcGoogle } from 'react-icons/fc';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { useState } from "react";
+import GoogleLogin from "../Shared/Social/GoogleLogin";
 
 
 const Login = () => {
@@ -33,7 +34,7 @@ const Login = () => {
                                         <input type="text" name="" placeholder="Enter your email" className="w-full border border-white rounded-lg px-2 p-2 bg-[#233D64] text-white mb-3" id="" />
 
                                         <div className="relative">
-                                            <input type = {(show === false)? 'password' : 'text'} name="" placeholder="Enter your password" className="w-full  bg-[rgb(35,61,100)] border border-white rounded-lg px-2  mb-4 text-white py-2" id="" />
+                                            <input type={(show === false) ? 'password' : 'text'} name="" placeholder="Enter your password" className="w-full  bg-[rgb(35,61,100)] border border-white rounded-lg px-2  mb-4 text-white py-2" id="" />
 
                                             <div className="text-2xl absolute top-2 right-2 text-white">
 
@@ -58,16 +59,17 @@ const Login = () => {
                                         <hr className="" />
 
                                         <div className="flex items-center justify-center z-10 -mt-3 mb-10">
-                                            <button className="btn btn-sm bg-[#13A2B7] border border-white] border border-white flex items-center justify-center text-white">OR/ <span className="text-indigo-700"> <Link >Registration</Link></span></button>
+                                            <button className="btn btn-sm bg-[#13A2B7] border border-white] border border-white flex items-center justify-center text-white">OR/ <span className="text-indigo-700"> <Link to= '/signup' >Registration</Link></span></button>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-center">
-                                        <button className="bg-[#13A2B7] border border-white rounded-lg px-2 py-2 text-white flex items-center gap-3 "><FcGoogle size={28}/>Login With Google</button>
-                                    </div>
+                                    <GoogleLogin></GoogleLogin>
+
                                 </div>
 
                             </div>
+
+
                         </div>
                     </div>
                 </div>
