@@ -1,8 +1,9 @@
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useContext,} from "react";
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 
@@ -21,13 +22,7 @@ const GoogleLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Your have successfully Logged In',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                toast.success('Login Successfully!')
 
                     .then(res => res.json())
                     .then(() => {
@@ -35,6 +30,9 @@ const GoogleLogin = () => {
                         navigate(from, { replace: true })
 
                     })
+            })
+            .catch(error => {
+                toast.error(error.message)
             })
     }
 

@@ -8,6 +8,8 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import GoogleLogin from "../Shared/Social/GoogleLogin";
+import { Link } from "react-router-dom";
 
 const Image_hosting_url = import.meta.env.VITE_Image_Upload_Url
 
@@ -51,28 +53,28 @@ const SignUp = () => {
 
         const formData = new FormData();
         formData.append("image", fileImage)
-        
+
         axios.post(Image_hosting_url, formData)
-        .then(res => {
-            console.log(res.data);
-            const image_Url = res.data.display_url;
+            .then(res => {
+                console.log(res.data);
+                const image_Url = res.data.display_url;
 
-            createUser(email, password)
-            .then( response => {
-                updateUser(name, image)
-                .then(res => {
-                    toast.success('Login Successfully!')
-                })
+                createUser(email, password)
+                    .then(response => {
+                        updateUser(name, image)
+                            .then(res => {
+                                toast.success('Login Successfully!')
+                            })
+                    })
+                    .catch(error => toast.error(error.message))
+
+
             })
-            .catch(error =>toast.error(error.message))
-            
+            .catch(error => {
+                console.log(error);
+            })
 
-        })
-        .catch(error => {
-            console.log(error);
-        })
 
-        
     }
 
     console.log(Image_hosting_url);
@@ -152,10 +154,19 @@ const SignUp = () => {
                                             </div>
                                         </div>
 
-                                        <div className="flex items-center justify-center">
-                                            <button className="bg-[#13A2B7] border border-white px-6 py-1 rounded-xl hover:bg-emerald-600 text-white">Sign Up</button>
+                                        <div className="flex items-center justify-center mb-5">
+                                            <button className="bg-[#13A2B7] border border-white px-8 py-1 rounded-xl hover:bg-emerald-600 text-white">Sign Up</button>
                                         </div>
                                     </form>
+
+                                    <div className="">
+                                        <hr className="" />
+
+                                        <div className="flex items-center justify-center z-10 -mt-3 mb-10">
+                                            <button className="btn btn-sm bg-[#13A2B7] border border-white] border border-white flex items-center justify-center text-white">OR/ <span className="text-indigo-700"> <Link to='/login' >Login</Link></span></button>
+                                        </div>
+                                    </div>
+                                    <GoogleLogin></GoogleLogin>
                                 </div>
 
                             </div>
