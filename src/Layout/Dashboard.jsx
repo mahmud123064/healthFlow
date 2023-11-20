@@ -1,8 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaBriefcaseMedical } from "react-icons/fa";
-
+import { FaBriefcaseMedical, FaEdit } from "react-icons/fa";
+import { BsPersonCircle } from "react-icons/bs";
+import { IoCalendarNumberOutline } from "react-icons/io5";
+import { TbVaccine } from "react-icons/tb";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
 
 const Dashboard = () => {
+
+    const { user } = useContext(AuthContext)
+
     return (
         <div className="mt-10">
             <div className="drawer lg:drawer-open">
@@ -15,10 +22,41 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+
                     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                         {/* Sidebar content here */}
-                        <li><Link to='medicalstatus'><FaBriefcaseMedical/>Medical Status</Link></li>
-                        {/* <li><a>Sidebar Item 2</a></li> */}
+                        <div className="mx-auto mb-3 text-[#233D64]">
+                            <div className="mask overflow-hidden border-2 border-[#233D64] rounded-full w-20 h-20 mx-auto">
+                                <img className="" src={user?.photoURL || 'https://i.ibb.co/c8n7mZL/1623060744486.jpg'} alt="Profile Pic" />
+
+                            </div>
+                            <div>
+                                <h1 className=' hover:bg-opacity-50 text-lg font-bold px-2'>{user?.displayName}</h1>
+                                <h1 className=' hover:bg-opacity-50 px-2'>{user?.email}</h1>
+                            </div>
+                        </div>
+
+                        <li><Link to="personalinfo">
+                            <BsPersonCircle />Personal Information
+                        </Link></li>
+                        <li><Link to='medicalstatus'>
+                            <FaBriefcaseMedical />Medical Status
+                        </Link></li>
+                        <li><Link to='viewmedicalstatus'>
+                            <FaEdit />Write Medical Status
+                        </Link></li>
+                        <li><Link to='routinecheckup'>
+                            <IoCalendarNumberOutline />Routine Checkup
+                        </Link></li>
+                        <li><Link to='viewroutinecheckup'>
+                            <FaEdit />Write Routine Checkup
+                        </Link></li>
+                        <li><Link to='vaccineschedule'>
+                            <TbVaccine />Vaccine Schedule
+                        </Link></li>
+                        <li><Link to='viewvaccineschedule'>
+                            <FaEdit />Write Vaccine Schedule
+                        </Link></li>
                     </ul>
 
                 </div>

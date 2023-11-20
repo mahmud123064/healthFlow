@@ -3,7 +3,7 @@
 const ViewMedicalStatus = () => {
     return (
         <div>
-            <p>This is view medical status page</p>
+            <p>This is view medical status page......</p>
         </div>
     );
 };

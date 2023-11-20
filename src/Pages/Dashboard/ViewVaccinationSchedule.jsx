@@ -3,7 +3,7 @@
 const ViewVaccinationSchedule = () => {
     return (
         <div>
-           <p>View vaccination schedule</p> 
+           <p>View vaccination schedule....</p> 
         </div>
     );
 };
