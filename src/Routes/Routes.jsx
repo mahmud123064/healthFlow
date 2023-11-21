@@ -14,6 +14,7 @@ import RoutineCheckUp from "../Pages/Dashboard/RoutineCheckUp";
 import ViewRoutineCheckUp from "../Pages/Dashboard/ViewRoutineCheckUp";
 import VacinationSchedule from "../Pages/Dashboard/VacinationSchedule";
 import ViewVaccinationSchedule from "../Pages/Dashboard/ViewVaccinationSchedule";
+import HealthGraph from "../Pages/Dashboard/HealthGraph";
 
 
 export const router = createBrowserRouter([
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
       {
         path:'viewvaccineschedule',
         element:<ViewVaccinationSchedule></ViewVaccinationSchedule>
+      },
+      {
+        path:'healthgraph',
+        element:<HealthGraph></HealthGraph>
       }
     ]
   }
