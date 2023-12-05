@@ -14,7 +14,7 @@ const Banner = () => {
                     <div className='p-10 md:p-28 lg:p-28  mt-12 '>
                         <h1 className='text-2xl md:text-xl lg:text-5xl text-white font-semibold mt-10'> <span className='text-[#92928b3f]'> We are here,<br /> to care</span> <span className='text-red-500'></span> </h1>
                         <p className='text-white mt-5 mb-5'> “A fit body, a calm mind, a house full of love. These things cannot be bought – they must be earned..”<br /> <span className='text-indigo-950'> —Naval Ravikant</span></p>
-                        <Link to='/admission'> <button className='btn bg-[#13A2B7] px-10 text-white hover:bg-slate-900 rounded-lg'> Our Services</button></Link>
+                        <Link to='/'> <button className='btn bg-[#13A2B7] px-10 text-white hover:bg-slate-900 rounded-lg'> Our Services</button></Link>
                     </div>
                 </div>
                 <div className=''>
